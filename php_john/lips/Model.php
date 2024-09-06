@@ -57,7 +57,7 @@ class Model{
             $sql.="{$key}=:{$key},";
         }
         $sql.=trim($sql,',');
-        $sql.=" WHERE id=:id";
+        $sql.=" WHERE id = :id";
         $stm=$this->db->prepare($sql);
         foreach($data as $key=>$value){
             $stm->bindValue(":{$key}",$value);
